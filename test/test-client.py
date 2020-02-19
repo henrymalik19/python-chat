@@ -17,6 +17,9 @@ def receive():
             msg = json.loads(msg)
 
             if msg['sender'] == 'server':
+                if 'history' in msg:
+                    for message in msg['history']:
+                        print(colored(f"{message['sender']}: {message['message']}", 'blue'))
                 print(colored(msg['message'], 'red'))
             else:
                 print(colored(f"{msg['sender']}: {msg['message']}", 'blue'))

@@ -4,6 +4,7 @@ class Sock_Client:
 
         self.conn = conn
         self.addr = addr
+        self.just_joined = True
 
     def set_name(self, name):
         self.name = name
